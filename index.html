@@ -3,271 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Donna Stroupe | Sales Representative</title>
+<title>Deann Thiel – Customer Support Professional</title>
 
 <style>
-:root{
-  --beige:#e6dfda;
-  --dark:#1f1a17;
-  --text:#2b2b2b;
-  --muted:#6b6b6b;
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-
 body{
-  font-family: "Segoe UI", system-ui, sans-serif;
-  background:#fff;
-  color:var(--text);
-  line-height:1.6;
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#0f172a;
+  color:#e5e7eb;
 }
+section{padding:80px 20px}
+.container{max-width:1100px;margin:auto}
 
-.wrapper{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns: 340px 1fr;
+/* HERO */
+.hero{
+  display:flex;
+  align-items:center;
+  gap:50px;
   min-height:100vh;
 }
-
-/* LEFT SIDEBAR */
-.sidebar{
-  background:var(--beige);
-  padding:40px 30px;
+.hero img{
+  width:320px;
+  border-radius:20px;
+}
+.hero h1{
+  font-size:52px;
+  margin-bottom:20px;
+}
+.hero p{
+  font-size:18px;
+  color:#94a3b8;
+}
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 28px;
+  background:#38bdf8;
+  color:#000;
+  border-radius:10px;
+  font-weight:bold;
 }
 
-.profile{
-  text-align:center;
-  margin-bottom:40px;
+/* SECTIONS */
+h2{
+  font-size:36px;
+  margin-bottom:20px;
 }
-.profile img{
-  width:160px;
-  height:160px;
-  border-radius:50%;
-  border:6px solid #fff;
-  object-fit:cover;
+p{color:#94a3b8;font-size:17px}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
-.profile h1{
-  display:none;
+.card{
+  background:#111827;
+  padding:30px;
+  border-radius:16px;
+}
+
+/* EXPERIENCE */
+.exp{
+  border-left:4px solid #38bdf8;
+  padding-left:20px;
+  margin-bottom:30px;
+}
+
+/* SKILLS */
+.skills span{
+  display:inline-block;
+  margin:8px;
+  padding:10px 18px;
+  background:#111827;
+  border-radius:999px;
 }
 
 /* CONTACT */
 .contact{
-  margin-top:30px;
-}
-.contact p{
-  font-size:14px;
-  margin-bottom:12px;
-  color:#333;
+  text-align:center;
+  background:#020617;
 }
 
-/* SECTION TITLE */
-.side-title{
-  margin-top:40px;
-  font-weight:800;
-  letter-spacing:2px;
-  font-size:15px;
-  border-bottom:2px solid #333;
-  padding-bottom:6px;
-  margin-bottom:18px;
+footer{
+  text-align:center;
+  padding:30px;
+  color:#64748b;
 }
 
-/* LISTS */
-ul{
-  padding-left:18px;
-}
-li{
-  margin-bottom:8px;
-  font-size:14px;
-}
-
-/* RIGHT CONTENT */
-.main{
-  padding:0;
-}
-
-/* HERO BAR */
-.hero{
-  background:var(--dark);
-  color:#fff;
-  padding:50px 60px;
-}
-.hero h2{
-  font-size:42px;
-  letter-spacing:2px;
-}
-.hero p{
-  margin-top:10px;
-  font-size:18px;
-  opacity:.9;
-}
-
-/* CONTENT */
-.content{
-  padding:50px 60px;
-}
-
-.section{
-  margin-bottom:50px;
-}
-.section h3{
-  font-size:22px;
-  margin-bottom:10px;
-}
-.section hr{
-  border:none;
-  border-bottom:1px solid #333;
-  margin-bottom:18px;
-}
-
-.section p{
-  font-size:15px;
-  color:var(--muted);
-}
-
-/* EXPERIENCE */
-.job{
-  margin-bottom:30px;
-}
-.job span{
-  font-size:14px;
-  color:var(--muted);
-}
-.job h4{
-  margin-top:6px;
-  font-size:17px;
-}
-
-/* REFERENCES */
-.refs{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-.refs p{
-  font-size:14px;
-}
-
-/* RESPONSIVE */
 @media(max-width:900px){
-  .wrapper{
-    grid-template-columns:1fr;
-  }
-  .hero,.content{
-    padding:30px;
-  }
-  .sidebar{
-    text-align:center;
-  }
+  .hero{flex-direction:column;text-align:center}
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<!-- HERO -->
+<section class="hero container">
+  <div>
+    <h1>I Help Customers Feel Heard & Supported</h1>
+    <p>
+      Professional Phone & Customer Support Representative  
+      with 5+ years of real-world experience.
+    </p>
+    <a href="#contact" class="btn">Hire Me</a>
+  </div>
 
-  <!-- LEFT -->
-  <aside class="sidebar">
-    <div class="profile">
-      <!-- profile.jpg same folder e rakhben -->
-      <img src="profile.jpg" alt="Profile Photo"
-      onerror="this.style.display='none'">
+  <!-- 👉 এখানে ছবি বসবে -->
+  <img src="images/profile.jpg" alt="Deann Thiel">
+</section>
+
+<!-- ABOUT -->
+<section class="container">
+  <h2>About Me</h2>
+  <p>
+    I specialize in high-volume phone support, problem resolution,
+    and delivering calm, professional customer experiences.
+    My focus is always on clarity, empathy, and efficiency.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section class="container">
+  <h2>What I Do</h2>
+  <div class="services">
+    <div class="card">
+      <h3>📞 Phone Support</h3>
+      <p>Handling inbound & outbound customer calls professionally.</p>
     </div>
-
-    <div class="contact">
-      <p>📧 hello@reallygreatsite.com</p>
-      <p>📞 +123-456-7890</p>
-      <p>📍 123 Anywhere St., Any City</p>
-      <p>🌐 reallygreatsite.com</p>
+    <div class="card">
+      <h3>🛠 Issue Resolution</h3>
+      <p>Quick identification and solution of customer problems.</p>
     </div>
-
-    <div class="side-title">EDUCATION</div>
-    <p><strong>BA Sales and Commerce</strong><br>Wardiere University<br>2016 – 2020</p>
-    <br>
-    <p><strong>Bachelor of Marketing</strong><br>Wardiere University<br>2020 – 2023</p>
-
-    <div class="side-title">SKILLS</div>
-    <ul>
-      <li>Sales Strategies</li>
-      <li>Negotiation Skills</li>
-      <li>Problem Solving</li>
-      <li>Time Management</li>
-      <li>Presentation Skills</li>
-      <li>Team Collaboration</li>
-    </ul>
-
-    <div class="side-title">LANGUAGE</div>
-    <p>English</p>
-    <p>French</p>
-  </aside>
-
-  <!-- RIGHT -->
-  <main class="main">
-    <div class="hero">
-      <h2>DONNA STROUPE</h2>
-      <p>Sales Representative</p>
+    <div class="card">
+      <h3>🤝 Customer Experience</h3>
+      <p>Creating trust and satisfaction with every interaction.</p>
     </div>
+  </div>
+</section>
 
-    <div class="content">
+<!-- EXPERIENCE -->
+<section class="container">
+  <h2>Experience</h2>
 
-      <section class="section">
-        <h3>About Me</h3>
-        <hr>
-        <p>
-          I am a Sales Representative who initiates and manages relationships
-          with customers. I serve as the primary contact from outreach to final
-          purchase, ensuring long-term business growth.
-        </p>
-      </section>
+  <div class="exp">
+    <strong>Blanda-Hill</strong> (2023–Present)
+    <p>High-volume phone support and technical assistance.</p>
+  </div>
 
-      <section class="section">
-        <h3>Work Experience</h3>
-        <hr>
+  <div class="exp">
+    <strong>Muller, Hettinger & Bergstrom</strong> (2021–2023)
+    <p>Customer service, follow-ups, and satisfaction management.</p>
+  </div>
+</section>
 
-        <div class="job">
-          <span>Jul 2020 – Aug 2023 · Arowwai Industries</span>
-          <h4>Consumer Goods Seller</h4>
-          <ul>
-            <li>Offered consumer goods packages to corporate clients</li>
-            <li>Met with clients quarterly to renew services</li>
-            <li>Trained junior sales agents</li>
-          </ul>
-        </div>
+<!-- SKILLS -->
+<section class="container">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>Customer Service</span>
+    <span>Communication</span>
+    <span>Problem Solving</span>
+    <span>Telephone Etiquette</span>
+    <span>Listening</span>
+    <span>Multitasking</span>
+  </div>
+</section>
 
-        <div class="job">
-          <span>Jul 2015 – Aug 2020 · Timmerman Industries</span>
-          <h4>FMCG Sales Agent</h4>
-          <ul>
-            <li>Visited corporate clients to present latest products</li>
-            <li>Built long-term customer relationships</li>
-          </ul>
-        </div>
-      </section>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Let’s Work Together</h2>
+  <p>Email me directly</p>
+  <a class="btn" href="mailto:deannthiel@gmail.com">deannthiel@gmail.com</a>
+</section>
 
-      <section class="section">
-        <h3>References</h3>
-        <hr>
-        <div class="refs">
-          <p>
-            <strong>Estelle Darcy</strong><br>
-            Wardiere Inc. / CEO<br>
-            📞 +123-456-7890<br>
-            ✉ hello@reallygreatsite.com
-          </p>
-          <p>
-            <strong>Harper Russo</strong><br>
-            Wardiere Inc. / CEO<br>
-            📞 +123-456-7890<br>
-            ✉ hello@reallygreatsite.com
-          </p>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-</div>
+<footer>
+  © 2026 Deann Thiel · Professional Website
+</footer>
 
 </body>
 </html>
