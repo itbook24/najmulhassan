@@ -1,240 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Donna Stroupe | Sales Representative</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MD Najmul Hassan </title>
+  <meta name="description" content="Professional sales & customer support website – services, highlights, proof, and contact." />
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family: "Segoe UI", Arial, sans-serif;
-  background:#e6dfda;
-  color:#222;
-}
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#111827;
+      --card2:#0f172a;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --line:rgba(255,255,255,.10);
+      --accent:#38bdf8;
+      --accent2:#a78bfa;
+      --shadow: 0 16px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --maxw: 1120px;
+    }
+    [data-theme="light"]{
+      --bg:#f6f1ec;
+      --card:#ffffff;
+      --card2:#fff7f2;
+      --text:#141414;
+      --muted:#4b5563;
+      --line:rgba(0,0,0,.10);
+      --accent:#0ea5e9;
+      --accent2:#7c3aed;
+      --shadow: 0 16px 40px rgba(20,20,20,.12);
+    }
 
-.wrapper{
-  max-width:1100px;
-  margin:40px auto;
-  background:#fff;
-  display:grid;
-  grid-template-columns:320px 1fr;
-  min-height:100vh;
-}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 420px at 15% -10%, rgba(56,189,248,.22), transparent 55%),
+        radial-gradient(800px 420px at 90% 10%, rgba(167,139,250,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 18px;}
 
-/* LEFT SIDEBAR */
-.sidebar{
-  background:#e6dfda;
-  padding:40px 30px;
-}
-.profile-pic{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  border:8px solid #fff;
-  overflow:hidden;
-  margin:0 auto 30px;
-}
-.profile-pic img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+    /* NAV */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: color-mix(in oklab, var(--bg) 70%, transparent);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:900; letter-spacing:.6px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 6px rgba(56,189,248,.12);
+    }
+    .links{
+      display:flex; align-items:center; gap:16px;
+      font-weight:700; color:var(--muted);
+      overflow:auto;
+    }
+    .links a{padding:8px 10px; border-radius:10px}
+    .links a:hover{background:color-mix(in oklab, var(--card) 70%, transparent); color:var(--text)}
+    .actions{display:flex; gap:10px; align-items:center}
+    .btn{
+      border:1px solid var(--line);
+      background:color-mix(in oklab, var(--card) 75%, transparent);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:800;
+      cursor:pointer;
+      transition:transform .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      border:none;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#fff;
+      box-shadow:0 12px 26px rgba(56,189,248,.20);
+    }
 
-.contact p{
-  margin:12px 0;
-  font-size:14px;
-}
+    /* HERO */
+    .hero{padding:56px 0 26px;}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:26px;
+      align-items:center;
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:color-mix(in oklab, var(--card) 70%, transparent);
+      color:var(--muted);
+      font-weight:800;
+      width:fit-content;
+    }
+    .badge span{
+      width:8px;height:8px;border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 6px rgba(56,189,248,.12);
+    }
+    h1{
+      font-size: clamp(34px, 4.3vw, 56px);
+      line-height:1.05;
+      margin:14px 0 12px;
+      letter-spacing:.3px;
+    }
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size: clamp(15px, 1.6vw, 18px);
+      max-width: 54ch;
+    }
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
 
-.section-title{
-  margin-top:40px;
-  font-weight:700;
-  letter-spacing:2px;
-  border-bottom:2px solid #333;
-  padding-bottom:6px;
-}
+    .hero-card{
+      background:linear-gradient(180deg, color-mix(in oklab, var(--card) 82%, transparent), color-mix(in oklab, var(--card2) 78%, transparent));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .profile{
+      display:flex; gap:14px; align-items:center;
+      padding:8px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:color-mix(in oklab, var(--card) 70%, transparent);
+    }
+    .avatar{
+      width:68px;height:68px;border-radius:50%;
+      overflow:hidden;
+      flex:0 0 auto;
+      background:#cbb8ac;
+      border:3px solid rgba(255,255,255,.35);
+    }
+    [data-theme="light"] .avatar{border-color:rgba(0,0,0,.08)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .pname{font-weight:950; margin:0; font-size:16px}
+    .prole{margin:2px 0 0; color:var(--muted); font-weight:800; font-size:13px}
 
-.list{
-  margin-top:20px;
-}
-.list p, .list li{
-  font-size:14px;
-  margin-bottom:10px;
-}
-.list ul{
-  padding-left:18px;
-}
+    .metrics{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:10px;
+      margin-top:14px;
+    }
+    .metric{
+      border:1px solid var(--line);
+      background:color-mix(in oklab, var(--card) 70%, transparent);
+      border-radius:16px;
+      padding:12px;
+    }
+    .metric b{display:block; font-size:16px}
+    .metric small{color:var(--muted); font-weight:800}
 
-/* RIGHT SIDE */
-.main{
-  padding:0;
-}
+    /* SECTIONS */
+    section{padding: 58px 0;}
+    .sec-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:14px; flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .sec-head h2{
+      margin:0;
+      font-size: clamp(22px, 2.6vw, 34px);
+      letter-spacing:.2px;
+    }
+    .sec-head p{margin:0; color:var(--muted); font-weight:700; max-width:58ch}
 
-/* HEADER */
-.header{
-  background:#1f1a17;
-  color:#fff;
-  padding:50px 50px;
-}
-.header h1{
-  font-size:38px;
-  letter-spacing:3px;
-}
-.header h2{
-  font-weight:300;
-  margin-top:10px;
-}
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:14px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background:color-mix(in oklab, var(--card) 78%, transparent);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.12);
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-weight:650}
 
-/* CONTENT */
-.content{
-  padding:40px 50px;
-}
-.content h3{
-  margin-top:40px;
-  font-size:22px;
-  border-bottom:2px solid #333;
-  padding-bottom:8px;
-}
-.content p{
-  margin-top:20px;
-  font-size:15px;
-  line-height:1.7;
-}
+    .pill-row{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:14px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:color-mix(in oklab, var(--card) 70%, transparent);
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:800;
+      color:color-mix(in oklab, var(--text) 90%, var(--muted));
+    }
 
-.job{
-  margin-top:25px;
-}
-.job strong{
-  display:block;
-  margin-bottom:6px;
-}
-.job ul{
-  padding-left:18px;
-  margin-top:8px;
-}
-.job li{
-  margin-bottom:6px;
-  font-size:14px;
-}
+    /* Proof */
+    .proof{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .proof .card{padding:20px}
+    .check{
+      display:flex; gap:10px; align-items:flex-start;
+      margin-top:10px; color:var(--muted); font-weight:650;
+    }
+    .check i{
+      width:18px;height:18px; border-radius:6px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      display:inline-block; margin-top:3px;
+      box-shadow:0 0 0 6px rgba(56,189,248,.10);
+    }
 
-.refs{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  margin-top:20px;
-}
-.refs p{
-  font-size:14px;
-}
+    /* Testimonials */
+    .quotes{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    blockquote{
+      margin:0;
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background:color-mix(in oklab, var(--card) 78%, transparent);
+    }
+    blockquote p{margin:0; color:var(--muted); font-weight:650}
+    blockquote footer{margin-top:12px; color:var(--text); font-weight:900}
 
-@media(max-width:900px){
-  .wrapper{
-    grid-template-columns:1fr;
-  }
-  .header{
-    text-align:center;
-  }
-}
-</style>
+    /* Contact */
+    .contact{
+      border:1px solid var(--line);
+      background:linear-gradient(135deg, color-mix(in oklab, var(--card) 82%, transparent), color-mix(in oklab, var(--card2) 78%, transparent));
+      border-radius: calc(var(--radius) + 6px);
+      padding:22px;
+      box-shadow: var(--shadow);
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:center;
+    }
+    .contact h2{margin:0 0 8px}
+    .contact p{margin:0; color:var(--muted); font-weight:700}
+    .contact .cta{justify-content:flex-end}
+    .small{
+      color:var(--muted);
+      font-weight:750;
+      font-size:13px;
+      margin-top:10px;
+    }
+
+    /* Footer */
+    .footer{
+      padding:26px 0 50px;
+      color:var(--muted);
+      font-weight:700;
+      text-align:center;
+      border-top:1px solid var(--line);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .proof{grid-template-columns:1fr}
+      .quotes{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .contact .cta{justify-content:flex-start}
+    }
+  </style>
 </head>
 
 <body>
-
-<div class="wrapper">
-
-  <!-- LEFT -->
-  <aside class="sidebar">
-    <div class="profile-pic">
-      <img src="https://i.ibb.co/FL0MVwJK/najmul.png" alt="Profile Photo">
-    </div>
-
-    <div class="contact">
-      <p>📧 hello@reallygreatsite.com</p>
-      <p>📞 +123-456-7890</p>
-      <p>📍 123 Anywhere St., Any City</p>
-      <p>🌐 reallygreatsite.com</p>
-    </div>
-
-    <div class="section-title">EDUCATION</div>
-    <div class="list">
-      <p><strong>BA Sales and Commerce</strong><br>Wardiere University<br>2016–2020</p>
-      <p><strong>Bachelor of Marketing</strong><br>Wardiere University<br>2020–2023</p>
-    </div>
-
-    <div class="section-title">SKILLS</div>
-    <div class="list">
-      <ul>
-        <li>Sales Strategies</li>
-        <li>Negotiation Skills</li>
-        <li>Problem-Solving</li>
-        <li>Time Management</li>
-        <li>Presentation Skills</li>
-        <li>Team Collaboration</li>
-      </ul>
-    </div>
-
-    <div class="section-title">LANGUAGE</div>
-    <div class="list">
-      <p>English</p>
-      <p>French</p>
-    </div>
-  </aside>
-
-  <!-- RIGHT -->
-  <main class="main">
-    <div class="header">
-      <h1>DONNA STROUPE</h1>
-      <h2>Sales Representative</h2>
-    </div>
-
-    <div class="content">
-      <h3>About Me</h3>
-      <p>
-        I am a Sales Representative who initiates and manages relationships with customers.
-        I serve as the point of contact from outreach through final purchase.
-      </p>
-
-      <h3>Work Experience</h3>
-
-      <div class="job">
-        <strong>Consumer Goods Seller — Arowwai Industries</strong>
-        <small>Jul 2020 – Aug 2023</small>
-        <ul>
-          <li>Offered consumer goods packages to corporate clients</li>
-          <li>Met clients quarterly to renew services</li>
-          <li>Trained junior sales agents</li>
-        </ul>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>MD Najmul Hassan</span>
       </div>
 
-      <div class="job">
-        <strong>FMCG Sales Agent — Timmerman Industries</strong>
-        <small>Jul 2015 – Aug 2020</small>
-        <ul>
-          <li>Visited corporate offices to promote products</li>
-          <li>Built long-term client relationships</li>
-        </ul>
-      </div>
+      <nav class="links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#proof">Highlights</a>
+        <a href="#skills">Skills</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-      <h3>References</h3>
-      <div class="refs">
-        <p>
-          <strong>Estelle Darcy</strong><br>
-          CEO, Wardiere Inc.<br>
-          Phone: +123-456-7890<br>
-          Email: hello@reallygreatsite.com
+      <div class="actions">
+        <button class="btn" id="themeBtn" type="button">Toggle</button>
+        <a class="btn primary" href="#contact">Hire Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge"><span></span> Available for Remote / On-site</div>
+        <h1>Turn conversations into<br/>customers & long-term trust.</h1>
+        <p class="sub">
+          I help businesses grow with confident sales communication, structured follow-ups,
+          and customer-first support. Fast response, clear explanations, and measurable outcomes.
         </p>
-        <p>
-          <strong>Harper Russo</strong><br>
-          CEO, Wardiere Inc.<br>
-          Phone: +123-456-7890<br>
-          Email: hello@reallygreatsite.com
-        </p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:hello@reallygreatsite.com">Email Me</a>
+          <a class="btn" href="#services">See Services</a>
+        </div>
+        <div class="small">Email: hello@reallygreatsite.com · Phone: +123-456-7890 · Location: Any City</div>
       </div>
 
+      <div class="hero-card">
+        <div class="profile">
+          <div class="avatar">
+            <!-- Put your photo here: /images/profile.jpg -->
+            <img src="https://i.ibb.co/FL0MVwJK/najmul.png" alt="Profile photo"
+                 onerror="this.style.display='none'; this.parentElement.style.background='#cbb8ac';" />
+          </div>
+          <div>
+            <p class="pname">Donna Stroupe</p>
+            <p class="prole">Sales Representative</p>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric"><b>5+ yrs</b><small>Experience</small></div>
+          <div class="metric"><b>Fast</b><small>Response</small></div>
+          <div class="metric"><b>High</b><small>Retention</small></div>
+        </div>
+
+        <div class="pill-row" style="margin-top:14px">
+          <span class="pill">Sales Strategy</span>
+          <span class="pill">Negotiation</span>
+          <span class="pill">CRM Follow-up</span>
+          <span class="pill">Customer Care</span>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
 
-</div>
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Services</h2>
+        <p>Clear, professional communication that improves conversions, satisfaction, and repeat business.</p>
+      </div>
 
+      <div class="grid3">
+        <div class="card">
+          <h3>📞 Sales Calls & Lead Handling</h3>
+          <p>Qualify leads, handle objections, and move prospects toward decisions without pressure.</p>
+        </div>
+        <div class="card">
+          <h3>🤝 Client Relationship Management</h3>
+          <p>Structured follow-ups, renewals, and relationship building to increase customer lifetime value.</p>
+        </div>
+        <div class="card">
+          <h3>🛠 Customer Support & Resolution</h3>
+          <p>Accurate guidance, calm conflict handling, and fast ticket closure for better reviews.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF / HIGHLIGHTS -->
+  <section id="proof">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Highlights</h2>
+        <p>Short proof points that show how I work — focus on outcomes, not long job lists.</p>
+      </div>
+
+      <div class="proof">
+        <div class="card">
+          <h3>What you get</h3>
+          <div class="check"><i></i><div>Polite, confident communication that builds trust.</div></div>
+          <div class="check"><i></i><div>Clear updates and follow-ups (no missed leads).</div></div>
+          <div class="check"><i></i><div>Customer-first problem solving + retention mindset.</div></div>
+        </div>
+        <div class="card">
+          <h3>How I work</h3>
+          <div class="check"><i></i><div>Understand the customer’s real need first.</div></div>
+          <div class="check"><i></i><div>Offer the best option with simple explanation.</div></div>
+          <div class="check"><i></i><div>Confirm satisfaction + next step.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Skills</h2>
+        <p>Core strengths that help close deals and keep customers happy.</p>
+      </div>
+
+      <div class="pill-row">
+        <span class="pill">Sales Strategies</span>
+        <span class="pill">Negotiation</span>
+        <span class="pill">Problem Solving</span>
+        <span class="pill">Time Management</span>
+        <span class="pill">Presentation</span>
+        <span class="pill">Team Collaboration</span>
+        <span class="pill">CRM & Follow-up</span>
+        <span class="pill">Customer Empathy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Reviews</h2>
+        <p>Example testimonial blocks — you can replace these with real client feedback later.</p>
+      </div>
+
+      <div class="quotes">
+        <blockquote>
+          <p>“Clear communication and quick resolution. Our customers noticed the difference.”</p>
+          <footer>— Team Lead</footer>
+        </blockquote>
+        <blockquote>
+          <p>“Professional, friendly, and organized follow-up. Helped improve conversions.”</p>
+          <footer>— Sales Manager</footer>
+        </blockquote>
+        <blockquote>
+          <p>“Strong customer handling skills. Calm under pressure and always accurate.”</p>
+          <footer>— Supervisor</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div>
+          <h2>Let’s work together</h2>
+          <p>Send a short message about your role, hours, and expectations — I’ll reply quickly.</p>
+          <div class="small">Tip: Update email/phone in the code to your real info.</div>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="mailto:hello@reallygreatsite.com?subject=Work%20Inquiry&body=Hi%20Donna,%0A%0AI%20want%20to%20discuss%20a%20role.%0A%0AThanks!">Email</a>
+          <a class="btn" href="tel:+1234567890">Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    © <span id="year"></span> Donna Stroupe · Professional Website
+  </div>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+        history.pushState(null,'',id);
+      });
+    });
+
+    // Theme
+    const root = document.documentElement;
+    const btn = document.getElementById('themeBtn');
+    const saved = localStorage.getItem('theme');
+    if(saved) root.setAttribute('data-theme', saved);
+
+    btn.addEventListener('click', ()=>{
+      const cur = root.getAttribute('data-theme') || 'dark';
+      const next = (cur === 'light') ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
